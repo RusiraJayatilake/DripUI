@@ -40,7 +40,13 @@ const ComponentListing = ({ featured = 0 }) => {
       count: 1,
       icon: "ri-login-box-line",
       featured: true,
-    }
+    },
+    {
+      name: "heros",
+      count: 1,
+      icon: "ri-login-box-line",
+      featured: true,
+    },
   ];
 
   useEffect(() => {

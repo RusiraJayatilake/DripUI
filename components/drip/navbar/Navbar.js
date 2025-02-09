@@ -10,27 +10,54 @@ export default function Navbar({ navbar }) {
   const [btnId, setBtnId] = useState();
   const [desktopPreview, setDesktopPreview] = useState(true);
   return (
-    <div>
+    <>
       <p className="text-lg font-bold">{navbar.type}</p>
-      <div className="flex flex-col w-full mx-auto mt-8 gap-8 p-4 pt-6 rounded-lg shadow-lg shadow-slate-500/30  mb-72">
+      <div className="flex flex-col w-full mx-auto mt-8 gap-8 p-4 pt-6 rounded-lg shadow-lg shadow-slate-500/30 mb-30">
         <div className="lg:flex gap-2 hidden">
-          
-          <Desktop className={`w-6 h-6 cursor-pointer ${desktopPreview ? `fill-blue-600` : `fill-black`} transition-colors duration-200 ease-in`} onClick={()=> setDesktopPreview(true) } />
-          <Mobile className={`w-6 h-6 cursor-pointer ${!desktopPreview ? `fill-blue-600` : `fill-black`} transition-colors duration-200 ease-in`} onClick={()=> setDesktopPreview(false) } />
+          <Desktop
+            className={`w-6 h-6 cursor-pointer ${
+              desktopPreview ? `fill-blue-600` : `fill-black`
+            } transition-colors duration-200 ease-in`}
+            onClick={() => setDesktopPreview(true)}
+          />
+          <Mobile
+            className={`w-6 h-6 cursor-pointer ${
+              !desktopPreview ? `fill-blue-600` : `fill-black`
+            } transition-colors duration-200 ease-in`}
+            onClick={() => setDesktopPreview(false)}
+          />
         </div>
         {navbar.category.map((nav) => (
-          <nav ref={navEL} key={nav.id} className={desktopPreview ? nav.style : nav.mobileStyle}>
+          <nav
+            ref={navEL}
+            key={nav.id}
+            className={desktopPreview ? nav.style : nav.mobileStyle}
+          >
             <input
               type={"checkbox"}
               id={`${nav.id}-checkbox`}
               className="hidden peer"
             />
             <div className={nav.logoStyle}>Logo</div>
-            <ul className={desktopPreview ? nav.listContainerStyle : nav.mobileListContainerStyle}>
+            <ul
+              className={
+                desktopPreview
+                  ? nav.listContainerStyle
+                  : nav.mobileListContainerStyle
+              }
+            >
               {nav.children.map((child) => (
                 <li key={child.id}>
                   <Link href={child.href}>
-                    <span className={desktopPreview ? nav.childrenStyle : nav.mobileChildrenStyle }>{child.text}</span>
+                    <span
+                      className={
+                        desktopPreview
+                          ? nav.childrenStyle
+                          : nav.mobileChildrenStyle
+                      }
+                    >
+                      {child.text}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -53,6 +80,6 @@ export default function Navbar({ navbar }) {
           </span>
         )}
       </div>
-    </div>
+    </>
   );
 }

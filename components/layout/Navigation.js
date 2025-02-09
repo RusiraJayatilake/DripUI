@@ -47,7 +47,7 @@ const Navigation = () => {
             <a
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 pr-3 text-sm group hover:text-drip-white/80 border-b-2 border-drip-black/20"
+              className="p-3 inline-flex items-center gap-2 text-sm group hover:text-drip-white/80 border-b-2 border-drip-black/20"
               href={TWITTER_LINK}
             >
               <i className="text-lg ri-twitter-line group-hover:-rotate-12"></i>{" "}
@@ -80,7 +80,7 @@ const Navigation = () => {
         <a
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center text-sm md:text-lg group hover:text-drip-black/80 border-r-2 border-drip-black/20"
+          className="pr-3 inline-flex items-center text-sm md:text-lg group hover:text-drip-black/80 border-r-2 border-drip-black/20"
           href={TWITTER_LINK}
         >
           <i className="text-lg ri-twitter-line group-hover:-rotate-12 "></i>{" "}
